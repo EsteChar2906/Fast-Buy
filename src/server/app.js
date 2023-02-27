@@ -6,7 +6,7 @@ import { renderToString } from 'react-dom/server';
 import morgan from 'morgan';
 import App from '../shared/App.js';
 import serialize from 'serialize-javascript';
-import { PORT } from './config.js';
+import { PORT, DOMINIO } from './config.js';
 import productsRoutes from './routes/produtcs.routes.js';
 
 const app = express();
@@ -16,6 +16,13 @@ app.set('port', PORT);
 app.use(morgan("dev"));
 app.use(cors());
 app.use(express.static('public'));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', DOMINIO);
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
 
 app.get("/", (req, res, next) => {
 	if(req.url !== "/api/*"){
