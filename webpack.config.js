@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 const reactConfig = {
 	entry: './src/client/index.js',
@@ -17,7 +18,7 @@ const reactConfig = {
 				loader: 'babel-loader' 
 			},
 			{
-        		test: /\.css$/i,
+        		test: /\.(css)$/i,
         		use: ["style-loader", "css-loader"],
       },
 		]
@@ -25,7 +26,8 @@ const reactConfig = {
 	plugins: [
 		new webpack.DefinePlugin({
 			__isBrowser__: 'true'
-		})
+		}),
+		new NodePolyfillPlugin()
 		]
 };
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import ProductsContext from "./productsContext.js";
 import ProductsReducer from "./productsReducer.js";
-import { DOMINIO } from '../../../server/config.js';
+import { DOMINIO } from '../../config.js';
 import axios from "axios";
 
 const ProductsState = ({ children }) => {
