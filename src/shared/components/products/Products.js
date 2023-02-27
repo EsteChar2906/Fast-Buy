@@ -8,12 +8,12 @@ const Products = () => {
 	
 	const productsRender = products.products;
 	return (
-		<div class="container">
-			<div class="row">
-				<div class="row row-cols-1 row-cols-md-3 g-4">
+		<div className="container">
+			<div className="row">
+				<div className="row row-cols-1 row-cols-md-3 g-4">
 					{productsRender && productsRender.map((p) => {
 						return (
-							<div key={p._id} class="col" >
+							<div key={p._id} className="col" >
 								<Product
 								title={p.title}
 								category={p.category}

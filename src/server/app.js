@@ -5,7 +5,6 @@ import { StaticRouter } from 'react-router-dom/server';
 import { renderToString } from 'react-dom/server';
 import morgan from 'morgan';
 import App from '../shared/App.js';
-import serialize from 'serialize-javascript';
 import { PORT, DOMINIO } from './config.js';
 import productsRoutes from './routes/produtcs.routes.js';
 

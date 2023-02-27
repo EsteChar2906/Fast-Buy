@@ -17,10 +17,7 @@
       "@babel/preset-react"
     ],
     "plugins": [
-      "@babel/plugin-transform-runtime",
-      "babel-plugin-transform-object-rest-spread",
-      "react-html-attrs"
-
+      "@babel/plugin-transform-runtime"
     ]
   },
   "dependencies": {
