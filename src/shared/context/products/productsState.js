@@ -1,7 +1,6 @@
 import React, { useEffect, useReducer, useState } from "react";
 import ProductsContext from "./productsContext.js";
 import ProductsReducer from "./productsReducer.js";
-import { DOMINIO } from '../../config.js';
 import axios from "axios";
 
 const ProductsState = ({ children }) => {
@@ -23,7 +22,7 @@ const ProductsState = ({ children }) => {
 	}, [category, brand, title, page, sort]);
 
 	const getProducts = async () => {
-		const response = await axios(`${DOMINIO}/api/products?category=${category}&brand=${brand}&title=${title}&page=${page}&sort=${sort}`)
+		const response = await axios(`/api/products?category=${category}&brand=${brand}&title=${title}&page=${page}&sort=${sort}`)
 		.then((res) => {
 			dispatch({
 				type: "GET_PRODUCTS",

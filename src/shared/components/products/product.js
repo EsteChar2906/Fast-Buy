@@ -2,7 +2,7 @@ import React from 'React';
 
 const Product = ({title, image, category, brand}) => {
 	return (
-		<div class="card mb-3 text-center h-100">
+		<div className="card mb-3 text-center h-100">
 			<div class="card-body">
 				<img src={image} alt={title} class="card-image-top" width="80" height="100"/>
 			<div>
