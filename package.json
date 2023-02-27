@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:develop": "npm-run-all --parallel server dev",
-    "start": "nodemon server.js",
+    "start": "npm-run-all --parallel server dev",
     "server": "webpack -w --mode development",
     "dev": "nodemon server.js"
   },
