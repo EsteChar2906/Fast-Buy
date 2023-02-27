@@ -13,11 +13,10 @@ const Header = () => {
 
 	return(
 		<header>
-			<section>
-				<nav className="navbar bg-body-tertiary">
-					<div className="container-fluid">
-    					<Link to="/" className="navbar-brand" >Fast Buy</Link>
-      					<form className="d-flex" role="search">
+			<section className="container p-4 text-center">
+				<div className="row gx-5">
+					<div className="col">
+						<form className="d-flex" role="search">
         					<input 
         					className="form-control me-2" 
         					type="search" 
@@ -26,11 +25,7 @@ const Header = () => {
         					onChange={handleSearch}
         					/>
       					</form>
-    				</div>		
-				</nav>
-			</section>
-			<section className="container p-4 text-center">
-				<div className="row gx-5">
+					</div>
 					<div className="col">
 						<FilterCategory />
 					</div>
