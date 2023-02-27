@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Product = ({title, image, category, brand}) => {
+const Product = ({title, image, category, brand, price}) => {
 	return (
 		<div className="card mb-3 text-center h-100">
 			<div className="card-body">
@@ -12,7 +12,7 @@ const Product = ({title, image, category, brand}) => {
 			</div>
 			</div>
 			<div className="d-grid gap-2 col-6 mx-auto mb-3">
-				<button type="buton" className="btn btn-outline-success">Comprar</button>
+				<button type="buton" className="btn btn-outline-success"> {price}$ Comprar</button>
 			</div>
 		</div>
 	);

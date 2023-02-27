@@ -6,17 +6,17 @@ import axios from "axios";
 const ProductsState = ({ children }) => {
 
 	const initialState = {
-		products: [],
+		products: []
 	}
 
 	const [ state, dispatch ] = useReducer(ProductsReducer, initialState);
 
-	const [category, setCategory] = useState('All');
+	const [category, setCategory] = useState('');
     const [brand, setBrand] = useState('');
     const [title, setTitle] = useState('');
     const [page, setPage] = useState(1);
 	const [sort, setSort] = useState('');
-
+	
 	useEffect(() => {
 		getProducts(category, brand, title, page, sort);
 	}, [category, brand, title, page, sort]);
@@ -37,6 +37,7 @@ const ProductsState = ({ children }) => {
 	return (
 		<ProductsContext.Provider value={{
 			products: state.products,
+			page,
 			setCategory,
 			setBrand,
 			setTitle,
