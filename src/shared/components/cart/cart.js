@@ -15,6 +15,7 @@ const Cart = () => {
 		emptyCart,
 	} = useCart();
 
+
 	const addingCart = (id, quantity, stock) => {
 
 		if(quantity < stock && quantity >= 0){
@@ -22,8 +23,15 @@ const Cart = () => {
 		}
 	};
 
-	if(isEmpty) return <h1 className="text-center"> Carrito vacio</h1>
+	if(isEmpty){
+	 return (
+	 	<div>
+	 		<h1 className="text-center"> Carrito vacio</h1>
+	 	</div>
+	 	)
+	}
 
+	
 	return (
 		<section className="py-4 container" >
 			<div className="row justify-content-center">

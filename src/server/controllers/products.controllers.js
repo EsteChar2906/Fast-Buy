@@ -30,8 +30,6 @@ export const getProducts = async(req, res) => {
         sortBy["price"] = -1;
       }
 
-      const productss = await Products.find();
-
     const products = await Products.find({title: { $regex: title, $options: "i" }, brand: { $regex: brand, $options: "i"}, category: { $regex: category, $options: "i"}})
       .sort(sortBy)
       .skip(page * limit)

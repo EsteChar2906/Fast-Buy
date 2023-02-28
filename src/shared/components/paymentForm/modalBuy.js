@@ -1,5 +1,5 @@
 const exampleModal = document.getElementById('modalCompra')
-	exampleModal.addEventListener('show.bs.modal', event => {
+	exampleModal.addEventListener('show.bs.modal', (event) => {
   	// Button that triggered the modal
   	const button = event.relatedTarget
   	// Extract info from data-bs-* attributes

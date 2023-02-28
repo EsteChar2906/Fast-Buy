@@ -5,6 +5,7 @@ import { useCart } from 'react-use-cart';
 const Product = ({title, image, category, brand, price, stock, id}) => {
 
 	const { addItem, totalItems } = useCart();
+
 	return (
 		<div className="col-6">
 			<div className="card mb-3 text-center h-100">
@@ -18,7 +19,8 @@ const Product = ({title, image, category, brand, price, stock, id}) => {
 				</div>
 				</div>
 				<div className="d-grid gap-2 mx-auto d-md-block mb-3">
-					<button type="button" onClick={() => addItem({title, image, category, brand, price, stock, id})} className="btn btn-outline-success mx-1"> {price}$ Agregar al carrito</button>
+					<button type="button" onClick={() => 
+					 addItem({title, image, category, brand, price, stock, id})} className="btn btn-outline-success mx-1"> {price}$ Agregar al carrito</button>
 					<Link to="/payment" > <button type="button" className="btn btn-outline-success mx-1">Ir al carrito ({totalItems})</button></Link>
 				</div>
 			</div>
